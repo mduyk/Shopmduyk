@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Shop Proxy mduyk~</title>
+
+<style>
+body {
+    font-family: Arial;
+    text-align: center;
+    background: #0f172a;
+    color: white;
+    overflow: hidden;
+}
+
+.box {
+    background: #1e293b;
+    margin: 20px auto;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+button {
+    background: #22c55e;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #16a34a;
+}
+
+/* TUYẾT */
+.snowflake {
+    position: fixed;
+    top: -10px;
+    color: white;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to { transform: translateY(100vh); }
+}
+</style>
+</head>
+
+<body>
+
+<h1>Shop Proxy mduyk~</h1>
+
+<div class="box">
+    <h3>Proxy Ngày</h3>
+    <p>10.000đ</p>
+    <button onclick="buy()">Mua ngay</button>
+</div>
+
+<div class="box">
+    <h3>Proxy Tuần</h3>
+    <p>40.000đ</p>
+    <button onclick="buy()">Mua ngay</button>
+</div>
+
+<div class="box">
+    <h3>Proxy Tháng</h3>
+    <p>60.000đ</p>
+    <button onclick="buy()">Mua ngay</button>
+</div>
+
+<div class="box">
+    <h3>Proxy Vĩnh viễn</h3>
+    <p>300.000đ</p>
+    <button onclick="buy()">Mua ngay</button>
+</div>
+
+<script>
+function buy() {
+    window.location.href = "pay.html";
+}
+
+/* TUYẾT */
+function snow() {
+    const s = document.createElement("div");
+    s.className = "snowflake";
+    s.innerHTML = "❄";
+
+    s.style.left = Math.random() * window.innerWidth + "px";
+    s.style.fontSize = (10 + Math.random() * 10) + "px";
+    s.style.animationDuration = (5 + Math.random() * 5) + "s";
+
+    document.body.appendChild(s);
+
+    setTimeout(() => s.remove(), 10000);
+}
+
+setInterval(snow, 120);
+</script>
+
+</body>
+</html>
