@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Thanh toán</title>
+
+<style>
+body {
+    font-family: Arial;
+    text-align: center;
+    background: #020617;
+    color: white;
+    overflow: hidden;
+}
+
+.box {
+    background: #1e293b;
+    margin: 50px auto;
+    padding: 20px;
+    width: 320px;
+    border-radius: 10px;
+}
+
+button {
+    margin-top: 15px;
+    background: #22c55e;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* TUYẾT */
+.snowflake {
+    position: fixed;
+    top: -10px;
+    color: white;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to { transform: translateY(100vh); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Thông tin thanh toán</h2>
+
+    <p><b>STK:</b> 0588807300000</p>
+    <p><b>Chủ TK:</b> Cao Minh Duy</p>
+
+    <p style="color: yellow;">
+        ⚠️ Vui lòng nhập số điện thoại khi chuyển tiền để được hỗ trợ
+    </p>
+
+    <button onclick="paid()">Tôi đã thanh toán</button>
+</div>
+
+<script>
+function paid() {
+    alert("Nếu bạn gặp vấn đề khi quên ghi số điện thoại vui lòng liên hệ admin để được hỗ trợ: 0328033706");
+}
+
+/* TUYẾT */
+function snow() {
+    const s = document.createElement("div");
+    s.className = "snowflake";
+    s.innerHTML = "❄";
+
+    s.style.left = Math.random() * window.innerWidth + "px";
+    s.style.fontSize = (10 + Math.random() * 10) + "px";
+    s.style.animationDuration = (5 + Math.random() * 5) + "s";
+
+    document.body.appendChild(s);
+
+    setTimeout(() => s.remove(), 10000);
+}
+
+setInterval(snow, 120);
+</script>
+
+</body>
+</html>
